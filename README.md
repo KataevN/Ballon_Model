@@ -4,4 +4,4 @@
 
 # Демонстрация работы
 
-![](https://github.com/DmitryPashkovsky/balloon_modeling_2D/blob/main/experiment_1.gif)
+![](https://github.com/KataevN/Ballon_Model/blob/main/balloon.gif)
