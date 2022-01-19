@@ -32,16 +32,6 @@ class Spring{
     }
 
     draw(ctx){
-
-        drawLine(
-            ctx,
-            this.left_particle.x, 
-            this.left_particle.y, 
-            this.right_particle.x, 
-            this.right_particle.y, 
-            SPRING_COLOR
-            );
-
         this.left_particle.draw(ctx);
         this.right_particle.draw(ctx);
     }

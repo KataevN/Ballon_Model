@@ -79,10 +79,6 @@ class Ball {
             let particle = this.particles[i];
             particle.reaction_force_vector = this.#calculateReactionForce(particle, wall);
             particle.recalculatePositions(this.dt);
-
-            if (particle.total_force_vector.length() > _max_vector_length){
-                _max_vector_length = particle.total_force_vector.length();
-            }
         }
     }
 
@@ -108,20 +104,6 @@ class Ball {
         return p;
     }
 
-    #twoPointsToVector(point_1, point_2){
-
-        let point_1_x = point_1[0];
-        let point_1_y = point_1[1];
-
-        let point_2_x = point_2[0];
-        let point_2_y = point_2[1];
-
-        let vector_x = point_2_x - point_1_x;
-        let vector_y = point_2_y - point_1_y;
-
-        return [vector_x, vector_y];
-    }
-
     #radiansToCoordinates(phi){
         let x = this.r * Math.cos(phi);
         let y = this.r * Math.sin(phi);
@@ -129,12 +111,7 @@ class Ball {
         return [x, y]
     }
 
-    #vectorLength(vector){
-        let x = vector[0];
-        let y = vector[1];
 
-        return Math.pow(((x * x + y * y)), 0.5)
-    }
 
     #calculateVolume(width, height){
         let center_point = this.#findPointInTheBall(width, height);
